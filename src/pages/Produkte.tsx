@@ -117,15 +117,15 @@ export default function Produkte() {
         </div>
       </section>
 
-      {/* Produktbild Platzhalter */}
+      {/* Produktbild */}
       <section className="py-12 bg-background">
         <div className="container-tight">
-          <div className="bg-secondary rounded-3xl p-8 md:p-16 flex items-center justify-center min-h-[300px] md:min-h-[400px] border-2 border-dashed border-border">
-            <div className="text-center">
-              <Shield className="w-16 h-16 text-accent mx-auto mb-4" />
-              <p className="text-muted-foreground font-medium">Produktbild: SYSTEM ASS 400</p>
-              <p className="text-sm text-muted-foreground mt-2">Platzhalter für Produktfoto</p>
-            </div>
+          <div className="bg-secondary rounded-3xl overflow-hidden">
+            <img 
+              src="/images/system-ass-400.png" 
+              alt="SYSTEM ASS 400 Alarmanlage mit allen Komponenten" 
+              className="w-full h-auto object-contain"
+            />
           </div>
         </div>
       </section>
@@ -184,13 +184,13 @@ export default function Produkte() {
               </div>
             </div>
 
-            {/* Bild Platzhalter */}
-            <div className="bg-card rounded-3xl p-8 flex items-center justify-center min-h-[300px] border-2 border-dashed border-border">
-              <div className="text-center">
-                <Radio className="w-12 h-12 text-accent mx-auto mb-4" />
-                <p className="text-muted-foreground font-medium">Beispielbild: Funkmodule</p>
-                <p className="text-sm text-muted-foreground mt-2">Platzhalter für Foto</p>
-              </div>
+            {/* App Steuerung Bild */}
+            <div className="rounded-3xl overflow-hidden shadow-medium">
+              <img 
+                src="/images/app-steuerung.png" 
+                alt="Smartphone App zur Steuerung der Alarmanlage" 
+                className="w-full h-auto object-cover"
+              />
             </div>
           </div>
         </div>
