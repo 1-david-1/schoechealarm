@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const navigation = {
@@ -16,6 +16,10 @@ const navigation = {
   ],
 };
 
+const handleNavClick = (href: string) => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -23,10 +27,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">S</span>
-              </div>
+            <div className="flex items-center gap-2 mb-6">
+              <img 
+                src="/lovable-uploads/cec23f73-6e4c-43a8-9cbf-dd39b6c5f0e9.png" 
+                alt="Schöche Alarm- und Sicherheitstechnik Logo" 
+                className="h-10 w-auto"
+              />
               <div>
                 <span className="font-bold text-lg">Schöche</span>
                 <span className="block text-xs text-primary-foreground/70 -mt-0.5">
@@ -51,6 +57,7 @@ export function Footer() {
                 <li key={item.name}>
                   <Link
                     to={item.href}
+                    onClick={() => handleNavClick(item.href)}
                     className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
                   >
                     {item.name}
@@ -68,6 +75,7 @@ export function Footer() {
                 <li key={item.name}>
                   <Link
                     to={item.href}
+                    onClick={() => handleNavClick(item.href)}
                     className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
                   >
                     {item.name}
@@ -109,7 +117,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <Clock className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                 <span className="text-sm text-primary-foreground/80">
-                  Mo - Fr: 8:00 - 17:00 Uhr<br />
+                  Mo - Fr: 7:00 - 16:00 Uhr<br />
                   24h Notdienst verfügbar
                 </span>
               </li>

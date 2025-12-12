@@ -19,7 +19,7 @@ const contactInfo = [
     title: "Telefon",
     content: "037434 80628",
     href: "tel:+493743480628",
-    description: "Mo - Fr: 8:00 - 17:00 Uhr",
+    description: "Mo - Fr: 7:00 - 16:00 Uhr",
   },
   {
     icon: Mail,
@@ -32,7 +32,7 @@ const contactInfo = [
     icon: MapPin,
     title: "Adresse",
     content: "Dorfplatz 6, 08606 Gassenreuth",
-    href: "https://maps.google.com/?q=Dorfplatz+6,+08606+Gassenreuth",
+    href: "https://www.google.com/maps/search/?api=1&query=Dorfplatz+6,+08606+Gassenreuth,+Deutschland",
     description: "Termine nach Vereinbarung",
   },
   {
