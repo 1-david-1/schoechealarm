@@ -63,25 +63,13 @@ export function HeroSection() {
           {/* Visual */}
           <div className="relative hidden lg:block animate-fade-up animation-delay-300">
             <div className="relative">
-              {/* Main Card */}
-              <div className="bg-primary-foreground/10 backdrop-blur-xl rounded-3xl p-8 border border-primary-foreground/20">
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { icon: "🏠", label: "Privatkunden", desc: "Einfamilienhäuser & Wohnungen" },
-                    { icon: "🏢", label: "Gewerbe", desc: "Büros, Läden & Praxen" },
-                    { icon: "🔒", label: "Einbruchschutz", desc: "Zertifizierte Anlagen" },
-                    { icon: "📹", label: "Überwachung", desc: "Moderne Kamerasysteme" },
-                  ].map((item) => (
-                    <div
-                      key={item.label}
-                      className="bg-primary-foreground/5 rounded-2xl p-5 hover:bg-primary-foreground/10 transition-colors"
-                    >
-                      <span className="text-3xl mb-3 block">{item.icon}</span>
-                      <h3 className="font-semibold text-primary-foreground mb-1">{item.label}</h3>
-                      <p className="text-sm text-primary-foreground/60">{item.desc}</p>
-                    </div>
-                  ))}
-                </div>
+              {/* Hero Image */}
+              <div className="rounded-3xl overflow-hidden shadow-glow">
+                <img 
+                  src="/images/sicherheit-gefuehl.png" 
+                  alt="Mit Sicherheit ein gutes Gefühl - Schöche Alarm und Sicherheitstechnik" 
+                  className="w-full h-auto object-cover"
+                />
               </div>
 
               {/* Floating Badge */}
