@@ -24,8 +24,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "E-Mail",
-    content: "info@schoeche-alarm.de",
-    href: "mailto:info@schoeche-alarm.de",
+    content: "Anfrage senden",
+    href: "#kontaktformular",
     description: "Antwort innerhalb von 24h",
   },
   {
@@ -126,7 +126,7 @@ export default function Kontakt() {
         <div className="container-tight">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Form */}
-            <div>
+            <div id="kontaktformular">
               <h2 className="text-3xl font-bold text-foreground mb-6">
                 Schreiben Sie uns
               </h2>

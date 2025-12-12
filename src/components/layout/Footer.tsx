@@ -107,12 +107,13 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent shrink-0" />
-                <a
-                  href="mailto:info@schoeche-alarm.de"
+                <Link
+                  to="/kontakt"
+                  onClick={() => handleNavClick('/kontakt')}
                   className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
                 >
-                  info@schoeche-alarm.de
-                </a>
+                  Anfrage senden
+                </Link>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="w-5 h-5 text-accent shrink-0 mt-0.5" />

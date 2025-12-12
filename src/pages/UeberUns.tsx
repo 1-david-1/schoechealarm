@@ -200,19 +200,18 @@ export default function UeberUns() {
               </div>
             </div>
             <div className="bg-card rounded-3xl p-8 border border-border shadow-soft">
-              <blockquote className="text-lg text-foreground italic mb-6">
-                "Sicherheit ist Vertrauenssache. Deshalb nehmen wir uns Zeit für 
-                jeden Kunden und jedes Projekt. Denn nur wer die individuellen 
-                Anforderungen kennt, kann die passende Lösung finden."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center">
-                  <span className="text-accent-foreground font-bold">AS</span>
-                </div>
-                <div>
-                  <span className="font-semibold text-foreground block">Andreas Schöche</span>
-                  <span className="text-sm text-muted-foreground">Inhaber</span>
-                </div>
+              <h3 className="text-xl font-bold text-foreground mb-4">Unser Versprechen</h3>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  Wir haben uns entschlossen, ein individuelles Konzept auf einzigartige Kunden zu entwickeln!
+                </p>
+                <p>
+                  Wir bauen unsere Zentrale mit verschiedensten Komponenten ganz auf Ihre Bedürfnisse zusammen 
+                  und Sie zahlen nur das, was Sie wirklich benötigen!
+                </p>
+                <p className="font-semibold text-foreground">
+                  Von der Stange? Oder vom Baumarkt? – Das war Gestern!
+                </p>
               </div>
             </div>
           </div>
