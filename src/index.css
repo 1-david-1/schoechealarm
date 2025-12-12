@@ -9,32 +9,32 @@
 
 @layer base {
   :root {
-    /* Primary: Corporate Blue */
-    --primary: 210 100% 40%;
+    /* Primary: Deep Navy Blue - Trust & Security */
+    --primary: 220 60% 20%;
     --primary-foreground: 0 0% 100%;
     
     /* Background: Clean whites */
     --background: 0 0% 100%;
-    --foreground: 210 30% 15%;
+    --foreground: 220 30% 15%;
     
     /* Card: Soft off-white */
-    --card: 210 20% 98%;
-    --card-foreground: 210 30% 15%;
+    --card: 220 20% 98%;
+    --card-foreground: 220 30% 15%;
     
     /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 210 30% 15%;
+    --popover-foreground: 220 30% 15%;
     
-    /* Secondary: Light blue-gray */
-    --secondary: 210 30% 95%;
-    --secondary-foreground: 210 30% 20%;
+    /* Secondary: Light slate */
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 220 30% 20%;
     
     /* Muted */
-    --muted: 210 20% 96%;
-    --muted-foreground: 210 15% 45%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 10% 45%;
     
-    /* Accent: Bright Blue */
-    --accent: 210 100% 50%;
+    /* Accent: Warm Amber/Orange */
+    --accent: 28 90% 55%;
     --accent-foreground: 0 0% 100%;
     
     /* Destructive */
@@ -42,19 +42,19 @@
     --destructive-foreground: 0 0% 100%;
     
     /* Border */
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 210 100% 40%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 220 60% 20%;
     
     --radius: 0.75rem;
     
-    /* Custom colors - Blue theme */
-    --navy: 210 100% 25%;
-    --navy-light: 210 90% 40%;
-    --navy-dark: 210 100% 15%;
-    --amber: 210 100% 50%;
-    --amber-light: 210 100% 60%;
-    --amber-dark: 210 100% 35%;
+    /* Custom colors */
+    --navy: 220 60% 20%;
+    --navy-light: 220 50% 30%;
+    --navy-dark: 220 70% 12%;
+    --amber: 28 90% 55%;
+    --amber-light: 35 95% 65%;
+    --amber-dark: 25 85% 45%;
     --slate-50: 220 20% 98%;
     --slate-100: 220 15% 95%;
     --slate-200: 220 15% 90%;
