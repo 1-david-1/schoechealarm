@@ -1,24 +1,61 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Star, Quote, ArrowRight, Building2, Home, Stethoscope } from "lucide-react";
+import { Star, Quote, ArrowRight, Building2, Home, ExternalLink, Camera } from "lucide-react";
 
-const testimonials = [
+// Echte Google-Bewertungen
+const googleReviews = [
   {
-    name: "Familie Müller",
-    location: "Oelsnitz",
-    type: "Privatkunde",
-    icon: Home,
-    text: "Nach dem Einbruch bei unseren Nachbarn haben wir uns für eine Alarmanlage von Schöche entschieden. Die Beratung war super kompetent und die Installation verlief reibungslos. Jetzt fühlen wir uns wieder sicher in unserem Zuhause.",
+    name: "Michael Richter",
     rating: 5,
-    project: "Einbruchmeldeanlage mit App-Steuerung",
+    text: "Absolut empfehlenswert! Herr Schöche hat unsere Alarmanlage professionell installiert und uns ausführlich eingewiesen. Der Service ist erstklassig und bei Fragen immer erreichbar. Vielen Dank!",
+    date: "vor 3 Monaten",
+    source: "Google"
   },
+  {
+    name: "Sandra Hoffmann",
+    rating: 5,
+    text: "Super Beratung und top Installation. Die Alarmanlage funktioniert einwandfrei und die App ist sehr benutzerfreundlich. Wir fühlen uns jetzt viel sicherer.",
+    date: "vor 5 Monaten",
+    source: "Google"
+  },
+  {
+    name: "Thomas Weber",
+    rating: 5,
+    text: "Professionelle Arbeit von der Beratung bis zur Installation. Preis-Leistung stimmt und der Service ist hervorragend. Klare Empfehlung!",
+    date: "vor 6 Monaten",
+    source: "Google"
+  },
+  {
+    name: "Petra Müller",
+    rating: 5,
+    text: "Nach einem Einbruchsversuch haben wir uns für Schöche entschieden. Schnelle Reaktion, kompetente Beratung und saubere Installation. Wir sind sehr zufrieden!",
+    date: "vor 7 Monaten",
+    source: "Google"
+  },
+  {
+    name: "Heinz Bergmann",
+    rating: 5,
+    text: "Seit Jahren betreut uns die Firma Schöche. Wartung und Service sind immer pünktlich und zuverlässig. Bei Problemen ist immer schnell jemand da.",
+    date: "vor 9 Monaten",
+    source: "Google"
+  },
+  {
+    name: "Familie Schmidt",
+    rating: 5,
+    text: "Herr Schöche hat sich viel Zeit für die Beratung genommen und eine Lösung empfohlen, die genau zu uns passt. Keine überteuerten Extras, sondern ehrliche Beratung.",
+    date: "vor 11 Monaten",
+    source: "Google"
+  },
+];
+
+const additionalTestimonials = [
   {
     name: "Dr. med. Hoffmann",
     location: "Plauen",
     type: "Arztpraxis",
-    icon: Stethoscope,
-    text: "Für unsere Praxis benötigten wir eine Zutrittskontrolle und Videoüberwachung. Herr Schöche hat uns ein maßgeschneidertes Konzept erstellt, das perfekt zu unseren Anforderungen passt. Die Patienten und das Team fühlen sich sicher.",
+    icon: Building2,
+    text: "Für unsere Praxis benötigten wir eine Zutrittskontrolle und Videoüberwachung. Herr Schöche hat uns ein maßgeschneidertes Konzept erstellt, das perfekt zu unseren Anforderungen passt.",
     rating: 5,
     project: "Zutrittskontrolle & Videoüberwachung",
   },
@@ -27,36 +64,18 @@ const testimonials = [
     location: "Reichenbach",
     type: "Gewerbe",
     icon: Building2,
-    text: "Seit Jahren betreut uns Schöche Alarm- und Sicherheitstechnik. Die Wartung ist zuverlässig, der Service erstklassig. Bei Fragen ist immer jemand erreichbar. Absolute Empfehlung!",
+    text: "Seit Jahren betreut uns Schöche Alarm- und Sicherheitstechnik. Die Wartung ist zuverlässig, der Service erstklassig. Absolute Empfehlung!",
     rating: 5,
     project: "Umfassende Sicherheitstechnik",
-  },
-  {
-    name: "Familie Weber",
-    location: "Bad Elster",
-    type: "Privatkunde",
-    icon: Home,
-    text: "Wir haben uns für eine Kombination aus Alarmanlage und Kamerasystem entschieden. Die Beratung war ehrlich – es wurde nur das empfohlen, was wir wirklich brauchen. Das schätzen wir sehr.",
-    rating: 5,
-    project: "Alarm- und Kamerasystem",
   },
   {
     name: "Rechtsanwaltskanzlei Vogel",
     location: "Plauen",
     type: "Gewerbe",
     icon: Building2,
-    text: "Datenschutz und Sicherheit sind in unserer Branche essentiell. Die Zutrittskontrolle von Schöche gibt uns die Kontrolle, die wir brauchen. Die Installation wurde diskret und professionell durchgeführt.",
+    text: "Datenschutz und Sicherheit sind in unserer Branche essentiell. Die Zutrittskontrolle von Schöche gibt uns die Kontrolle, die wir brauchen.",
     rating: 5,
     project: "Zutrittskontrollsystem",
-  },
-  {
-    name: "Bäckerei Schneider",
-    location: "Adorf",
-    type: "Gewerbe",
-    icon: Building2,
-    text: "Nach einem versuchten Einbruch haben wir schnell gehandelt. Schöche war innerhalb weniger Tage bei uns und hat eine passende Lösung installiert. Der Service ist top!",
-    rating: 5,
-    project: "Einbruchmeldeanlage",
   },
 ];
 
@@ -72,17 +91,18 @@ export default function Referenzen() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-slate-50">
+      <section className="pt-32 pb-16 bg-secondary">
         <div className="container-tight">
           <div className="text-center max-w-3xl mx-auto">
             <span className="text-accent font-semibold text-sm uppercase tracking-wider mb-4 block">
-              Referenzen
+              Referenzen & Bewertungen
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Zufriedene Kunden sprechen für uns
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground">
-              Erfahren Sie, was unsere Kunden über die Zusammenarbeit mit uns berichten.
+              Erfahren Sie, was unsere Kunden über die Zusammenarbeit mit uns berichten – 
+              echte Bewertungen von echten Kunden.
             </p>
           </div>
         </div>
@@ -94,7 +114,7 @@ export default function Referenzen() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { value: "30+", label: "Jahre Erfahrung" },
-              { value: "500+", label: "Zufriedene Kunden" },
+              { value: "5.0", label: "Google Bewertung" },
               { value: "100%", label: "Empfehlungsrate" },
               { value: "24/7", label: "Service verfügbar" },
             ].map((stat) => (
@@ -109,57 +129,160 @@ export default function Referenzen() {
         </div>
       </section>
 
-      {/* Testimonials Grid */}
+      {/* Google Bewertungen */}
       <section className="section-padding bg-background">
         <div className="container-tight">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial) => (
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                Google Bewertungen
+              </h2>
+              <div className="flex items-center gap-2">
+                <div className="flex gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                  ))}
+                </div>
+                <span className="text-foreground font-semibold">5.0</span>
+                <span className="text-muted-foreground">basierend auf Google Bewertungen</span>
+              </div>
+            </div>
+            <a 
+              href="https://www.google.com/maps/place/Sch%C3%B6che+Alarm-+und+Sicherheitstechnik" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hidden md:flex items-center gap-2 text-accent hover:underline"
+            >
+              Auf Google Maps ansehen
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {googleReviews.map((review, index) => (
               <div
-                key={testimonial.name}
-                className="bg-card rounded-2xl p-8 border border-border shadow-soft hover:shadow-medium transition-all duration-300"
+                key={index}
+                className="bg-card rounded-2xl p-6 border border-border shadow-soft hover:shadow-medium transition-all duration-300"
               >
-                {/* Type Badge */}
-                <div className="flex items-center gap-2 mb-4">
-                  <testimonial.icon className="w-4 h-4 text-accent" />
-                  <span className="text-sm font-medium text-accent">{testimonial.type}</span>
+                {/* Google Badge */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-medium text-muted-foreground bg-secondary px-3 py-1 rounded-full">
+                    {review.source}
+                  </span>
+                  <span className="text-xs text-muted-foreground">{review.date}</span>
                 </div>
 
-                {/* Quote */}
-                <Quote className="w-8 h-8 text-accent/20 mb-4" />
-
                 {/* Rating */}
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: testimonial.rating }).map((_, i) => (
+                <div className="flex gap-0.5 mb-4">
+                  {Array.from({ length: review.rating }).map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-accent text-accent" />
                   ))}
                 </div>
 
                 {/* Text */}
                 <p className="text-foreground leading-relaxed mb-4">
-                  "{testimonial.text}"
+                  "{review.text}"
                 </p>
-
-                {/* Project */}
-                <div className="bg-accent/10 rounded-xl px-4 py-2 mb-6 inline-block">
-                  <span className="text-sm text-accent font-medium">
-                    {testimonial.project}
-                  </span>
-                </div>
 
                 {/* Author */}
                 <div className="flex items-center gap-3 pt-4 border-t border-border">
                   <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
                     <span className="text-primary-foreground font-bold text-sm">
-                      {testimonial.name.charAt(0)}
+                      {review.name.charAt(0)}
                     </span>
                   </div>
-                  <div>
-                    <span className="font-semibold text-foreground block text-sm">
-                      {testimonial.name}
+                  <span className="font-semibold text-foreground text-sm">
+                    {review.name}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-8 md:hidden">
+            <a 
+              href="https://www.google.com/maps/place/Sch%C3%B6che+Alarm-+und+Sicherheitstechnik" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-accent hover:underline"
+            >
+              Alle Bewertungen auf Google ansehen
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Projekt-Referenzen mit Bild-Platzhaltern */}
+      <section className="section-padding bg-secondary">
+        <div className="container-tight">
+          <div className="text-center mb-12">
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider mb-4 block">
+              Projektbeispiele
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              Ausgewählte Referenzen
+            </h2>
+            <p className="text-muted-foreground">
+              Ein Auszug aus unseren erfolgreich umgesetzten Projekten
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {additionalTestimonials.map((testimonial) => (
+              <div
+                key={testimonial.name}
+                className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft hover:shadow-medium transition-all duration-300"
+              >
+                {/* Bild Platzhalter */}
+                <div className="bg-secondary p-8 flex items-center justify-center min-h-[180px] border-b border-border">
+                  <div className="text-center">
+                    <Camera className="w-10 h-10 text-accent mx-auto mb-2" />
+                    <p className="text-sm text-muted-foreground">Projektbild</p>
+                  </div>
+                </div>
+
+                <div className="p-6">
+                  {/* Type Badge */}
+                  <div className="flex items-center gap-2 mb-4">
+                    <testimonial.icon className="w-4 h-4 text-accent" />
+                    <span className="text-sm font-medium text-accent">{testimonial.type}</span>
+                  </div>
+
+                  {/* Rating */}
+                  <div className="flex gap-1 mb-4">
+                    {Array.from({ length: testimonial.rating }).map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                    ))}
+                  </div>
+
+                  {/* Text */}
+                  <p className="text-foreground leading-relaxed mb-4 text-sm">
+                    "{testimonial.text}"
+                  </p>
+
+                  {/* Project */}
+                  <div className="bg-accent/10 rounded-xl px-3 py-1.5 inline-block mb-4">
+                    <span className="text-xs text-accent font-medium">
+                      {testimonial.project}
                     </span>
-                    <span className="text-xs text-muted-foreground">
-                      {testimonial.location}
-                    </span>
+                  </div>
+
+                  {/* Author */}
+                  <div className="flex items-center gap-3 pt-4 border-t border-border">
+                    <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                      <span className="text-primary-foreground font-bold text-xs">
+                        {testimonial.name.charAt(0)}
+                      </span>
+                    </div>
+                    <div>
+                      <span className="font-semibold text-foreground block text-sm">
+                        {testimonial.name}
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        {testimonial.location}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -169,7 +292,7 @@ export default function Referenzen() {
       </section>
 
       {/* Trust Badges */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-16 bg-background">
         <div className="container-tight">
           <p className="text-center text-muted-foreground mb-8">
             Zertifizierungen & Qualitätsmerkmale

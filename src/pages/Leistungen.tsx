@@ -10,8 +10,72 @@ import {
   Wrench,
   ArrowRight,
   CheckCircle2,
-  Phone
+  Phone,
+  Smartphone,
+  Radio,
+  Building2,
+  Home,
+  Globe
 } from "lucide-react";
+
+const mainServices = [
+  {
+    id: "konzepte",
+    icon: Shield,
+    title: "Leistungen und Kompetenzen",
+    subtitle: "Ganzheitliche Sicherheitslösungen",
+    description: "Wir entwickeln Lösungskonzepte für das gesamte Spektrum Objektsicherung, Geländesicherung, Brandmeldeanlagen nach VDS. Dabei umfasst unser langjähriger Klientenkreis Unternehmen der unterschiedlichsten Größen und Branchen, sowie kleine und große Privathäuser, Wohnungen und Ferienhäuser.",
+    imagePlaceholder: "Sicherheitsberatung vor Ort"
+  },
+];
+
+const consultingServices = [
+  {
+    icon: Building2,
+    title: "Gewerbliche und private Objekte",
+    description: "Individuelle Beratung für Unternehmen und Privatpersonen"
+  },
+  {
+    icon: Shield,
+    title: "Außen- und Freilandabsicherung",
+    description: "Schutz für Ihr gesamtes Gelände und Außenbereiche"
+  },
+  {
+    icon: Camera,
+    title: "Videoüberwachung",
+    description: "Moderne Kamerasysteme für maximale Sicherheit"
+  },
+  {
+    icon: KeyRound,
+    title: "Zutrittskontrollmanagement",
+    description: "Kontrollierter Zugang zu sensiblen Bereichen"
+  },
+  {
+    icon: Flame,
+    title: "Brandmeldesystem (VdS)",
+    description: "VdS-zertifizierte Brandmeldeanlagen"
+  },
+  {
+    icon: Smartphone,
+    title: "APP-Nutzung und Internetaufschaltung",
+    description: "Steuerung und Überwachung per Smartphone"
+  },
+  {
+    icon: Settings,
+    title: "Mechanische Absicherung",
+    description: "Inklusive Torsteuerung und mechanische Sicherungen"
+  },
+  {
+    icon: Radio,
+    title: "Wachdienststellen",
+    description: "Aufschaltung auf Notrufzentrale, Pflegedienstellen, Polizei etc."
+  },
+  {
+    icon: Globe,
+    title: "Fernwartungen",
+    description: "Schneller Support und Wartung aus der Ferne"
+  },
+];
 
 const services = [
   {
@@ -79,22 +143,6 @@ const services = [
     useCases: ["Wohngebäude", "Gewerbebetriebe", "Produktionsstätten", "Hotels", "Pflegeeinrichtungen"],
   },
   {
-    id: "konzepte",
-    icon: Settings,
-    title: "Individuelle Sicherheitskonzepte",
-    subtitle: "Maßgeschneiderte Lösungen für Ihre Anforderungen",
-    description: "Jedes Objekt ist anders. Deshalb analysieren wir Ihre Situation vor Ort und erstellen ein individuelles Sicherheitskonzept, das exakt auf Ihre Bedürfnisse und Ihr Budget abgestimmt ist.",
-    features: [
-      "Kostenlose Vor-Ort-Analyse",
-      "Schwachstellen-Identifikation",
-      "Budgetgerechte Lösungen",
-      "Erweiterbare Systeme",
-      "Berücksichtigung von Versicherungsanforderungen",
-      "Transparente Kosten ohne versteckte Gebühren",
-    ],
-    useCases: ["Neubauten", "Bestandsgebäude", "Gewerbe-Neuausrichtung", "Nach Einbrüchen", "Erweiterungen"],
-  },
-  {
     id: "service",
     icon: Wrench,
     title: "Montage, Wartung & Service",
@@ -116,7 +164,7 @@ export default function Leistungen() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-slate-50">
+      <section className="pt-32 pb-16 bg-secondary">
         <div className="container-tight">
           <div className="text-center max-w-3xl mx-auto">
             <span className="text-accent font-semibold text-sm uppercase tracking-wider mb-4 block">
@@ -133,12 +181,78 @@ export default function Leistungen() {
         </div>
       </section>
 
-      {/* Services */}
+      {/* Main Overview */}
+      <section className="section-padding bg-background">
+        <div className="container-tight">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Leistungen und Kompetenzen
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                Wir entwickeln Lösungskonzepte für das gesamte Spektrum Objektsicherung, 
+                Geländesicherung, Brandmeldeanlagen nach VDS. Dabei umfasst unser langjähriger 
+                Klientenkreis Unternehmen der unterschiedlichsten Größen und Branchen, 
+                sowie kleine und große Privathäuser, Wohnungen und Ferienhäuser.
+              </p>
+              <Button variant="default" size="lg" asChild>
+                <Link to="/kontakt">
+                  Beratung anfragen
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </Button>
+            </div>
+
+            {/* Bild Platzhalter */}
+            <div className="bg-secondary rounded-3xl p-8 flex items-center justify-center min-h-[350px] border-2 border-dashed border-border">
+              <div className="text-center">
+                <Shield className="w-16 h-16 text-accent mx-auto mb-4" />
+                <p className="text-muted-foreground font-medium">Beispielbild: Sicherheitsberatung</p>
+                <p className="text-sm text-muted-foreground mt-2">Platzhalter für Foto</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Beratungsfelder */}
+      <section className="section-padding bg-secondary">
+        <div className="container-tight">
+          <div className="text-center mb-12">
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider mb-4 block">
+              Beratung
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Unsere Beratungsfelder
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Umfassende Beratung für alle Sicherheitsaspekte Ihres Objekts
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {consultingServices.map((service) => (
+              <div
+                key={service.title}
+                className="bg-card rounded-2xl p-6 border border-border shadow-soft hover:shadow-medium transition-all"
+              >
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                  <service.icon className="w-6 h-6 text-accent" />
+                </div>
+                <h3 className="font-bold text-foreground mb-2">{service.title}</h3>
+                <p className="text-sm text-muted-foreground">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Detailed Services */}
       {services.map((service, index) => (
         <section
           key={service.id}
           id={service.id}
-          className={`section-padding ${index % 2 === 0 ? "bg-background" : "bg-slate-50"}`}
+          className={`section-padding ${index % 2 === 0 ? "bg-background" : "bg-secondary"}`}
         >
           <div className="container-tight">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -173,8 +287,18 @@ export default function Leistungen() {
                 </Button>
               </div>
 
-              {/* Use Cases Card */}
+              {/* Image Placeholder + Use Cases */}
               <div className={index % 2 === 1 ? "lg:order-1" : ""}>
+                {/* Bild Platzhalter */}
+                <div className="bg-secondary rounded-3xl p-8 flex items-center justify-center min-h-[250px] border-2 border-dashed border-border mb-6">
+                  <div className="text-center">
+                    <service.icon className="w-12 h-12 text-accent mx-auto mb-4" />
+                    <p className="text-muted-foreground font-medium">Beispielbild: {service.title}</p>
+                    <p className="text-sm text-muted-foreground mt-2">Platzhalter für Foto</p>
+                  </div>
+                </div>
+
+                {/* Use Cases Card */}
                 <div className="bg-card rounded-3xl p-8 border border-border shadow-soft">
                   <h3 className="font-bold text-foreground mb-6">Typische Einsatzbereiche</h3>
                   <div className="flex flex-wrap gap-3">
@@ -193,6 +317,28 @@ export default function Leistungen() {
           </div>
         </section>
       ))}
+
+      {/* Produkte Teaser */}
+      <section className="section-padding bg-secondary">
+        <div className="container-tight">
+          <div className="bg-card rounded-3xl p-8 md:p-12 border border-border shadow-soft text-center">
+            <Shield className="w-16 h-16 text-accent mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Unsere Produkte entdecken
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+              Erfahren Sie mehr über unser innovatives SYSTEM ASS 400 – 
+              flexibel, erweiterbar und zukunftssicher.
+            </p>
+            <Button variant="default" size="lg" asChild>
+              <Link to="/produkte">
+                Zu unseren Produkten
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="section-padding gradient-hero">
