@@ -43,21 +43,21 @@ export function Header() {
       <div className="container-tight">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-2 group">
             <img 
               src="/lovable-uploads/cec23f73-6e4c-43a8-9cbf-dd39b6c5f0e9.png" 
               alt="Schöche Alarm- und Sicherheitstechnik Logo" 
-              className="h-10 w-auto"
+              className="h-9 w-auto"
             />
-            <div className="hidden sm:block">
+            <div className="hidden sm:flex flex-col justify-center">
               <span className={cn(
-                "font-bold text-lg transition-colors",
+                "font-bold text-base leading-tight transition-colors",
                 isScrolled ? "text-foreground group-hover:text-accent" : "text-primary-foreground group-hover:text-accent"
               )}>
                 Schöche
               </span>
               <span className={cn(
-                "block text-xs -mt-0.5",
+                "text-[10px] leading-tight",
                 isScrolled ? "text-muted-foreground" : "text-primary-foreground/70"
               )}>
                 Alarm- & Sicherheitstechnik
