@@ -26,14 +26,17 @@ export function HeroSection() {
 
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up animation-delay-100">
-              Ihr Zuhause und Betrieb{" "}
-              <span className="text-gradient-accent">sicher geschützt</span>
+              Mit Sicherheit{" "}
+              <span className="text-accent">ein gutes Gefühl!</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-up animation-delay-200">
-              Individuelle Alarmanlagen und Sicherheitssysteme vom Profi – 
-              maßgeschneidert für Ihre Bedürfnisse, persönlich beraten.
+            <p className="text-lg md:text-xl text-primary-foreground/80 mb-4 max-w-xl mx-auto lg:mx-0 animate-fade-up animation-delay-200">
+              <strong>Ihre Sicherheit steht bei uns im Fokus!</strong>
+            </p>
+            <p className="text-base md:text-lg text-primary-foreground/70 mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-up animation-delay-200">
+              Wir entwickeln ein individuelles Konzept für einzigartige Kunden. 
+              Sie zahlen nur das, was Sie wirklich benötigen – mit über 30 Jahren Markterfahrung.
             </p>
 
             {/* Benefits */}

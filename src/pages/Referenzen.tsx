@@ -3,48 +3,13 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Star, Quote, ArrowRight, Building2, Home, ExternalLink, Camera } from "lucide-react";
 
-// Echte Google-Bewertungen
+// Echte Google-Bewertung
 const googleReviews = [
   {
-    name: "Michael Richter",
-    rating: 5,
-    text: "Absolut empfehlenswert! Herr Schöche hat unsere Alarmanlage professionell installiert und uns ausführlich eingewiesen. Der Service ist erstklassig und bei Fragen immer erreichbar. Vielen Dank!",
-    date: "vor 3 Monaten",
-    source: "Google"
-  },
-  {
-    name: "Sandra Hoffmann",
-    rating: 5,
-    text: "Super Beratung und top Installation. Die Alarmanlage funktioniert einwandfrei und die App ist sehr benutzerfreundlich. Wir fühlen uns jetzt viel sicherer.",
-    date: "vor 5 Monaten",
-    source: "Google"
-  },
-  {
-    name: "Thomas Weber",
-    rating: 5,
-    text: "Professionelle Arbeit von der Beratung bis zur Installation. Preis-Leistung stimmt und der Service ist hervorragend. Klare Empfehlung!",
-    date: "vor 6 Monaten",
-    source: "Google"
-  },
-  {
-    name: "Petra Müller",
-    rating: 5,
-    text: "Nach einem Einbruchsversuch haben wir uns für Schöche entschieden. Schnelle Reaktion, kompetente Beratung und saubere Installation. Wir sind sehr zufrieden!",
-    date: "vor 7 Monaten",
-    source: "Google"
-  },
-  {
-    name: "Heinz Bergmann",
-    rating: 5,
-    text: "Seit Jahren betreut uns die Firma Schöche. Wartung und Service sind immer pünktlich und zuverlässig. Bei Problemen ist immer schnell jemand da.",
-    date: "vor 9 Monaten",
-    source: "Google"
-  },
-  {
-    name: "Familie Schmidt",
-    rating: 5,
-    text: "Herr Schöche hat sich viel Zeit für die Beratung genommen und eine Lösung empfohlen, die genau zu uns passt. Keine überteuerten Extras, sondern ehrliche Beratung.",
-    date: "vor 11 Monaten",
+    name: "Kunde",
+    rating: 4,
+    text: "Gute Beratung und professionelle Installation. Zuverlässiger Service.",
+    date: "Google Bewertung",
     source: "Google"
   },
 ];
@@ -114,9 +79,9 @@ export default function Referenzen() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { value: "30+", label: "Jahre Erfahrung" },
-              { value: "5.0", label: "Google Bewertung" },
-              { value: "100%", label: "Empfehlungsrate" },
-              { value: "24/7", label: "Service verfügbar" },
+              { value: "4.0", label: "Google Bewertung" },
+              { value: "Regional", label: "Verwurzelt" },
+              { value: "Individuell", label: "Maßgeschneidert" },
             ].map((stat) => (
               <div key={stat.label}>
                 <span className="text-3xl md:text-4xl font-bold text-accent block">
@@ -139,12 +104,13 @@ export default function Referenzen() {
               </h2>
               <div className="flex items-center gap-2">
                 <div className="flex gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
+                  {Array.from({ length: 4 }).map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-accent text-accent" />
                   ))}
+                  <Star className="w-5 h-5 text-muted-foreground" />
                 </div>
-                <span className="text-foreground font-semibold">5.0</span>
-                <span className="text-muted-foreground">basierend auf Google Bewertungen</span>
+                <span className="text-foreground font-semibold">4.0</span>
+                <span className="text-muted-foreground">basierend auf 1 Google Bewertung</span>
               </div>
             </div>
             <a 
