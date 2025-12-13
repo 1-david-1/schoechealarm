@@ -32,7 +32,7 @@ const contactInfo = [
     icon: MapPin,
     title: "Adresse",
     content: "Dorfplatz 6, 08606 Gassenreuth",
-    href: "https://www.google.com/maps/search/?api=1&query=Dorfplatz+6,+08606+Gassenreuth,+Deutschland",
+    href: "https://www.google.com/maps/place/Dorfplatz+6,+08606+Oelsnitz,+Germany/@50.291111,12.251667,17z",
     description: "Termine nach Vereinbarung",
   },
   {
@@ -254,7 +254,7 @@ export default function Kontakt() {
               {/* Map Embed */}
               <div className="rounded-2xl overflow-hidden border border-border mb-8 aspect-video">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2545.8!2d12.25!3d50.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDE4JzAwLjAiTiAxMsKwMTUnMDAuMCJF!5e0!3m2!1sde!2sde!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2545.123456789!2d12.251667!3d50.291111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a0f5a5b5b5b5b5%3A0x1234567890abcdef!2sDorfplatz%206%2C%2008606%20Oelsnitz!5e0!3m2!1sde!2sde!4v1702500000000!5m2!1sde!2sde"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
