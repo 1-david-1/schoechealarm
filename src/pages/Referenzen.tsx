@@ -4,57 +4,41 @@ import { Button } from "@/components/ui/button";
 import { Star, Quote, ArrowRight, Building2, Home, ExternalLink, Camera } from "lucide-react";
 
 // Echte Google-Bewertung
-const googleReviews = [
-  {
-    name: "Kunde",
-    rating: 4,
-    text: "Gute Beratung und professionelle Installation. Zuverlässiger Service.",
-    date: "Google Bewertung",
-    source: "Google"
-  },
-];
-
-const additionalTestimonials = [
-  {
-    name: "Dr. med. Hoffmann",
-    location: "Plauen",
-    type: "Arztpraxis",
-    icon: Building2,
-    text: "Für unsere Praxis benötigten wir eine Zutrittskontrolle und Videoüberwachung. Herr Schöche hat uns ein maßgeschneidertes Konzept erstellt, das perfekt zu unseren Anforderungen passt.",
-    rating: 5,
-    project: "Zutrittskontrolle & Videoüberwachung",
-  },
-  {
-    name: "Autohaus Bergmann",
-    location: "Reichenbach",
-    type: "Gewerbe",
-    icon: Building2,
-    text: "Seit Jahren betreut uns Schöche Alarm- und Sicherheitstechnik. Die Wartung ist zuverlässig, der Service erstklassig. Absolute Empfehlung!",
-    rating: 5,
-    project: "Umfassende Sicherheitstechnik",
-  },
-  {
-    name: "Rechtsanwaltskanzlei Vogel",
-    location: "Plauen",
-    type: "Gewerbe",
-    icon: Building2,
-    text: "Datenschutz und Sicherheit sind in unserer Branche essentiell. Die Zutrittskontrolle von Schöche gibt uns die Kontrolle, die wir brauchen.",
-    rating: 5,
-    project: "Zutrittskontrollsystem",
-  },
-];
-
-const badges = [
-  "VdS-zertifiziert",
-  "Meisterbetrieb",
-  "Regionaler Partner",
-  "24h Service",
-  "Über 30 Jahre Erfahrung",
-];
-
+const googleReviews = [{
+  name: "Kunde",
+  rating: 4,
+  text: "Gute Beratung und professionelle Installation. Zuverlässiger Service.",
+  date: "Google Bewertung",
+  source: "Google"
+}];
+const additionalTestimonials = [{
+  name: "Dr. med. Hoffmann",
+  location: "Plauen",
+  type: "Arztpraxis",
+  icon: Building2,
+  text: "Für unsere Praxis benötigten wir eine Zutrittskontrolle und Videoüberwachung. Herr Schöche hat uns ein maßgeschneidertes Konzept erstellt, das perfekt zu unseren Anforderungen passt.",
+  rating: 5,
+  project: "Zutrittskontrolle & Videoüberwachung"
+}, {
+  name: "Autohaus Bergmann",
+  location: "Reichenbach",
+  type: "Gewerbe",
+  icon: Building2,
+  text: "Seit Jahren betreut uns Schöche Alarm- und Sicherheitstechnik. Die Wartung ist zuverlässig, der Service erstklassig. Absolute Empfehlung!",
+  rating: 5,
+  project: "Umfassende Sicherheitstechnik"
+}, {
+  name: "Rechtsanwaltskanzlei Vogel",
+  location: "Plauen",
+  type: "Gewerbe",
+  icon: Building2,
+  text: "Datenschutz und Sicherheit sind in unserer Branche essentiell. Die Zutrittskontrolle von Schöche gibt uns die Kontrolle, die wir brauchen.",
+  rating: 5,
+  project: "Zutrittskontrollsystem"
+}];
+const badges = ["VdS-zertifiziert", "Meisterbetrieb", "Regionaler Partner", "24h Service", "Über 30 Jahre Erfahrung"];
 export default function Referenzen() {
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero */}
       <section className="pt-32 pb-16 bg-secondary">
         <div className="container-tight">
@@ -77,19 +61,24 @@ export default function Referenzen() {
       <section className="py-12 bg-background border-b border-border">
         <div className="container-tight">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "30+", label: "Jahre Erfahrung" },
-              { value: "4.0", label: "Google Bewertung" },
-              { value: "Regional", label: "Verwurzelt" },
-              { value: "Individuell", label: "Maßgeschneidert" },
-            ].map((stat) => (
-              <div key={stat.label}>
+            {[{
+            value: "30+",
+            label: "Jahre Erfahrung"
+          }, {
+            value: "4.0",
+            label: "Google Bewertung"
+          }, {
+            value: "Regional",
+            label: "Verwurzelt"
+          }, {
+            value: "Individuell",
+            label: "Maßgeschneidert"
+          }].map(stat => <div key={stat.label}>
                 <span className="text-3xl md:text-4xl font-bold text-accent block">
                   {stat.value}
                 </span>
                 <span className="text-muted-foreground">{stat.label}</span>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -104,32 +93,23 @@ export default function Referenzen() {
               </h2>
               <div className="flex items-center gap-2">
                 <div className="flex gap-0.5">
-                  {Array.from({ length: 4 }).map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-accent text-accent" />
-                  ))}
+                  {Array.from({
+                  length: 4
+                }).map((_, i) => <Star key={i} className="w-5 h-5 fill-accent text-accent" />)}
                   <Star className="w-5 h-5 text-muted-foreground" />
                 </div>
                 <span className="text-foreground font-semibold">4.0</span>
                 <span className="text-muted-foreground">basierend auf 1 Google Bewertung</span>
               </div>
             </div>
-            <a 
-              href="https://www.google.com/maps/place/Sch%C3%B6che+Alarm-+und+Sicherheitstechnik" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-2 text-accent hover:underline"
-            >
+            <a target="_blank" rel="noopener noreferrer" className="hidden md:flex items-center gap-2 text-accent hover:underline" href="https://www.google.com/maps/place/Sch%C3%B6che+Alarm-und+Sicherheitstechnik/@50.3362369,12.0479646,17z/data=!3m1!4b1!4m6!3m5!1s0x47a11ed052ac3957:0xaac576e9841d02f2!8m2!3d50.3362335!4d12.0505395!16s%2Fg%2F11b6d5bngc?hl=de-de&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D">
               Auf Google Maps ansehen
               <ExternalLink className="w-4 h-4" />
             </a>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {googleReviews.map((review, index) => (
-              <div
-                key={index}
-                className="bg-card rounded-2xl p-6 border border-border shadow-soft hover:shadow-medium transition-all duration-300"
-              >
+            {googleReviews.map((review, index) => <div key={index} className="bg-card rounded-2xl p-6 border border-border shadow-soft hover:shadow-medium transition-all duration-300">
                 {/* Google Badge */}
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-xs font-medium text-muted-foreground bg-secondary px-3 py-1 rounded-full">
@@ -140,9 +120,9 @@ export default function Referenzen() {
 
                 {/* Rating */}
                 <div className="flex gap-0.5 mb-4">
-                  {Array.from({ length: review.rating }).map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-accent text-accent" />
-                  ))}
+                  {Array.from({
+                length: review.rating
+              }).map((_, i) => <Star key={i} className="w-5 h-5 fill-accent text-accent" />)}
                 </div>
 
                 {/* Text */}
@@ -161,17 +141,11 @@ export default function Referenzen() {
                     {review.name}
                   </span>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
 
           <div className="text-center mt-8 md:hidden">
-            <a 
-              href="https://www.google.com/maps/place/Sch%C3%B6che+Alarm-+und+Sicherheitstechnik" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-accent hover:underline"
-            >
+            <a href="https://www.google.com/maps/place/Sch%C3%B6che+Alarm-+und+Sicherheitstechnik" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-accent hover:underline">
               Alle Bewertungen auf Google ansehen
               <ExternalLink className="w-4 h-4" />
             </a>
@@ -195,11 +169,7 @@ export default function Referenzen() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {additionalTestimonials.map((testimonial) => (
-              <div
-                key={testimonial.name}
-                className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft hover:shadow-medium transition-all duration-300"
-              >
+            {additionalTestimonials.map(testimonial => <div key={testimonial.name} className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft hover:shadow-medium transition-all duration-300">
                 {/* Bild Platzhalter */}
                 <div className="bg-secondary p-8 flex items-center justify-center min-h-[180px] border-b border-border">
                   <div className="text-center">
@@ -217,9 +187,9 @@ export default function Referenzen() {
 
                   {/* Rating */}
                   <div className="flex gap-1 mb-4">
-                    {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-accent text-accent" />
-                    ))}
+                    {Array.from({
+                  length: testimonial.rating
+                }).map((_, i) => <Star key={i} className="w-4 h-4 fill-accent text-accent" />)}
                   </div>
 
                   {/* Text */}
@@ -251,8 +221,7 @@ export default function Referenzen() {
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -264,15 +233,10 @@ export default function Referenzen() {
             Zertifizierungen & Qualitätsmerkmale
           </p>
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
-            {badges.map((badge) => (
-              <div
-                key={badge}
-                className="flex items-center gap-2 px-6 py-3 bg-card rounded-xl border border-border"
-              >
+            {badges.map(badge => <div key={badge} className="flex items-center gap-2 px-6 py-3 bg-card rounded-xl border border-border">
                 <div className="w-3 h-3 rounded-full bg-accent" />
                 <span className="font-medium text-foreground">{badge}</span>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -295,6 +259,5 @@ export default function Referenzen() {
           </Button>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 }
