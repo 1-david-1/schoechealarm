@@ -122,7 +122,7 @@ export default function Produkte() {
         <div className="container-tight">
           <div className="bg-secondary rounded-3xl overflow-hidden">
             <img 
-              src="/images/system-ass-400.png" 
+              src={`${import.meta.env.BASE_URL}images/system-ass-400.png`}
               alt="SYSTEM ASS 400 Alarmanlage mit allen Komponenten" 
               className="w-full h-auto object-contain"
             />
@@ -187,7 +187,7 @@ export default function Produkte() {
             {/* App Steuerung Bild */}
             <div className="rounded-3xl overflow-hidden shadow-medium">
               <img 
-                src="/images/app-steuerung.png" 
+                src={`${import.meta.env.BASE_URL}images/app-steuerung.png`}
                 alt="Smartphone App zur Steuerung der Alarmanlage" 
                 className="w-full h-auto object-cover"
               />
