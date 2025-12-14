@@ -203,13 +203,13 @@ export default function Leistungen() {
               </Button>
             </div>
 
-            {/* Bild Platzhalter */}
-            <div className="bg-secondary rounded-3xl p-8 flex items-center justify-center min-h-[350px] border-2 border-dashed border-border">
-              <div className="text-center">
-                <Shield className="w-16 h-16 text-accent mx-auto mb-4" />
-                <p className="text-muted-foreground font-medium">Beispielbild: Sicherheitsberatung</p>
-                <p className="text-sm text-muted-foreground mt-2">Platzhalter für Foto</p>
-              </div>
+            {/* Bild */}
+            <div className="rounded-3xl overflow-hidden shadow-large">
+              <img 
+                src="/images/bildschirmfotohaus.jpg" 
+                alt="Sicherheitsberatung für Ihr Zuhause - Schöche Alarm- und Sicherheitstechnik" 
+                className="w-full h-auto object-cover"
+              />
             </div>
           </div>
         </div>
@@ -289,13 +289,13 @@ export default function Leistungen() {
 
               {/* Image Placeholder + Use Cases */}
               <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                {/* Bild Platzhalter */}
-                <div className="bg-secondary rounded-3xl p-8 flex items-center justify-center min-h-[250px] border-2 border-dashed border-border mb-6">
-                  <div className="text-center">
-                    <service.icon className="w-12 h-12 text-accent mx-auto mb-4" />
-                    <p className="text-muted-foreground font-medium">Beispielbild: {service.title}</p>
-                    <p className="text-sm text-muted-foreground mt-2">Platzhalter für Foto</p>
-                  </div>
+                {/* Bild */}
+                <div className="rounded-3xl overflow-hidden shadow-large mb-6">
+                  <img 
+                    src={index === 0 ? "/images/bildschirmfotohaus.jpg" : "/images/bildschirmfotoauto.jpg"} 
+                    alt={`${service.title} - Schöche Alarm- und Sicherheitstechnik`} 
+                    className="w-full h-auto object-cover"
+                  />
                 </div>
 
                 {/* Use Cases Card */}
