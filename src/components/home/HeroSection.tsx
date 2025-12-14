@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Shield, CheckCircle2, ArrowRight } from "lucide-react";
+import sicherheitGefuehlImage from "@/assets/sicherheit-gefuehl.png";
 
 export function HeroSection() {
   return (
@@ -69,7 +70,7 @@ export function HeroSection() {
               {/* Hero Image */}
               <div className="rounded-3xl overflow-hidden shadow-glow">
                 <img 
-                  src={`${import.meta.env.BASE_URL}images/sicherheit-gefuehl.png`}
+                  src={sicherheitGefuehlImage}
                   alt="Mit Sicherheit ein gutes Gefühl - Schöche Alarm und Sicherheitstechnik"
                   className="w-full h-auto object-cover"
                 />

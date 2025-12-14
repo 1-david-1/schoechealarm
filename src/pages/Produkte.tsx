@@ -15,6 +15,8 @@ import {
   Zap,
   Settings
 } from "lucide-react";
+import systemAss400Image from "@/assets/system-ass-400.png";
+import appSteuerungImage from "@/assets/app-steuerung.png";
 
 const systemFeatures = [
   {
@@ -122,7 +124,7 @@ export default function Produkte() {
         <div className="container-tight">
           <div className="bg-secondary rounded-3xl overflow-hidden">
             <img 
-              src={`${import.meta.env.BASE_URL}images/system-ass-400.png`}
+              src={systemAss400Image}
               alt="SYSTEM ASS 400 Alarmanlage mit allen Komponenten" 
               className="w-full h-auto object-contain"
             />
@@ -187,7 +189,7 @@ export default function Produkte() {
             {/* App Steuerung Bild */}
             <div className="rounded-3xl overflow-hidden shadow-medium">
               <img 
-                src={`${import.meta.env.BASE_URL}images/app-steuerung.png`}
+                src={appSteuerungImage}
                 alt="Smartphone App zur Steuerung der Alarmanlage" 
                 className="w-full h-auto object-cover"
               />
