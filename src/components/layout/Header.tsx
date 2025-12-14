@@ -45,7 +45,7 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group shrink-0">
             <img 
-              src="/lovable-uploads/cec23f73-6e4c-43a8-9cbf-dd39b6c5f0e9.png" 
+              src={`${import.meta.env.BASE_URL}assets/logo-vehicle.png`}
               alt="Schöche Alarm- und Sicherheitstechnik Logo" 
               className="h-10 w-auto"
             />
