@@ -17,6 +17,9 @@ import {
   Home,
   Globe
 } from "lucide-react";
+import bildschirmfotohausImage from "@/assets/bildschirmfotohaus.jpg";
+import bildschirmfotoautoImage from "@/assets/bildschirmfotoauto.jpg";
+import systemAss400Image from "@/assets/system-ass-400.png";
 
 const mainServices = [
   {
@@ -206,7 +209,7 @@ export default function Leistungen() {
             {/* Bild */}
             <div className="rounded-3xl overflow-hidden shadow-large">
               <img 
-                src={`${import.meta.env.BASE_URL}images/bildschirmfotohaus.jpg`}
+                src={bildschirmfotohausImage}
                 alt="Sicherheitsberatung für Ihr Zuhause - Schöche Alarm- und Sicherheitstechnik"
                 className="w-full h-auto object-cover"
               />
@@ -292,7 +295,7 @@ export default function Leistungen() {
                 {/* Bild */}
                 <div className="rounded-3xl overflow-hidden shadow-large mb-6">
                   <img 
-                    src={`${import.meta.env.BASE_URL}images/${service.id === "einbruch" ? "system-ass-400.png" : (index === 0 ? "bildschirmfotohaus.jpg" : "bildschirmfotoauto.jpg")}`}
+                    src={service.id === "einbruch" ? systemAss400Image : (index === 0 ? bildschirmfotohausImage : bildschirmfotoautoImage)}
                     alt={`${service.title} - Schöche Alarm- und Sicherheitstechnik`}
                     className="w-full h-auto object-cover"
                   />

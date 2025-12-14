@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logoVehicle from "@/assets/logo-vehicle.png";
 const navigation = [{
   name: "Startseite",
   href: "/"
@@ -49,7 +50,7 @@ export function Header() {
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group shrink-0">
-            <img src={`${import.meta.env.BASE_URL}assets/logo-vehicle.png`} alt="Schöche Alarm- und Sicherheitstechnik Logo" className="h-10 w-auto" />
+            <img src={logoVehicle} alt="Schöche Alarm- und Sicherheitstechnik Logo" className="h-10 w-auto" />
             <div className="flex flex-col justify-center">
               <span className={cn("font-bold text-base md:text-lg leading-none transition-colors whitespace-nowrap", isScrolled ? "text-foreground group-hover:text-accent" : "text-primary-foreground group-hover:text-accent")}>
                 Schöche Alarm

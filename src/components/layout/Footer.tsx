@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import logoVehicle from "@/assets/logo-vehicle.png";
 
 const navigation = {
   leistungen: [
@@ -29,7 +30,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-6">
               <img 
-                src={`${import.meta.env.BASE_URL}assets/logo-vehicle.png`}
+                src={logoVehicle}
                 alt="Schöche Alarm- und Sicherheitstechnik Logo" 
                 className="h-10 w-auto"
               />
