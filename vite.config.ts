@@ -5,7 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/schoechealarm/",
+  // Use '/schoechealarm/' for GitHub Pages, or '/' for other hosting
+  base: mode === "production" ? "/schoechealarm/" : "/",
   server: {
     host: "::",
     port: 8080,
