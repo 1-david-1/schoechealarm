@@ -292,7 +292,7 @@ export default function Leistungen() {
                 {/* Bild */}
                 <div className="rounded-3xl overflow-hidden shadow-large mb-6">
                   <img 
-                    src={`${import.meta.env.BASE_URL}images/${index === 0 ? "bildschirmfotohaus.jpg" : "bildschirmfotoauto.jpg"}`}
+                    src={`${import.meta.env.BASE_URL}images/${service.id === "einbruch" ? "system-ass-400.png" : (index === 0 ? "bildschirmfotohaus.jpg" : "bildschirmfotoauto.jpg")}`}
                     alt={`${service.title} - Schöche Alarm- und Sicherheitstechnik`}
                     className="w-full h-auto object-cover"
                   />

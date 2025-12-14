@@ -29,7 +29,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-6">
               <img 
-                src="/lovable-uploads/cec23f73-6e4c-43a8-9cbf-dd39b6c5f0e9.png" 
+                src={`${import.meta.env.BASE_URL}assets/logo-vehicle.png`}
                 alt="Schöche Alarm- und Sicherheitstechnik Logo" 
                 className="h-10 w-auto"
               />
