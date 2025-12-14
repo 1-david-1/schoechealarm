@@ -39,7 +39,12 @@ export function Header() {
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
-  return <header className="">
+  return <header className={cn(
+      "sticky top-0 z-50 py-4 transition-all duration-300",
+      isScrolled 
+        ? "bg-background/95 backdrop-blur-md shadow-sm" 
+        : "bg-primary"
+    )}>
       <div className="container-tight">
         <nav className="flex items-center justify-between">
           {/* Logo */}
