@@ -49,18 +49,18 @@ export function Header() {
               alt="Schöche Alarm- und Sicherheitstechnik Logo" 
               className="h-10 w-auto"
             />
-            <div className="hidden md:flex flex-col justify-center">
+            <div className="flex flex-col justify-center">
               <span className={cn(
-                "font-bold text-lg leading-none transition-colors whitespace-nowrap",
+                "font-bold text-base md:text-lg leading-none transition-colors whitespace-nowrap",
                 isScrolled ? "text-foreground group-hover:text-accent" : "text-primary-foreground group-hover:text-accent"
               )}>
-                Schöche
+                Schöche Alarm
               </span>
               <span className={cn(
-                "text-xs leading-none mt-0.5 whitespace-nowrap",
+                "text-[10px] md:text-xs leading-none mt-0.5 whitespace-nowrap",
                 isScrolled ? "text-muted-foreground" : "text-primary-foreground/70"
               )}>
-                Alarm- & Sicherheitstechnik
+                Sicherheitstechnik
               </span>
             </div>
           </Link>
