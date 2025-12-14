@@ -69,8 +69,8 @@ export function HeroSection() {
               {/* Hero Image */}
               <div className="rounded-3xl overflow-hidden shadow-glow">
                 <img 
-                  src="/images/sicherheit-gefuehl.png" 
-                  alt="Mit Sicherheit ein gutes Gefühl - Schöche Alarm und Sicherheitstechnik" 
+                  src={`${import.meta.env.BASE_URL}images/sicherheit-gefuehl.png`}
+                  alt="Mit Sicherheit ein gutes Gefühl - Schöche Alarm und Sicherheitstechnik"
                   className="w-full h-auto object-cover"
                 />
               </div>

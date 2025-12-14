@@ -184,7 +184,7 @@ export function AIChatWidget() {
         <div className="flex items-center justify-between p-4 border-b border-border bg-primary rounded-t-2xl">
           <div className="flex items-center gap-3">
             <img 
-              src="/lovable-uploads/cec23f73-6e4c-43a8-9cbf-dd39b6c5f0e9.png" 
+              src={`${import.meta.env.BASE_URL}assets/logo-vehicle.png`}
               alt="Schöche Logo" 
               className="h-8 w-auto"
             />
@@ -208,7 +208,7 @@ export function AIChatWidget() {
           {messages.length === 0 && (
             <div className="text-center text-muted-foreground py-8">
               <img 
-                src="/lovable-uploads/cec23f73-6e4c-43a8-9cbf-dd39b6c5f0e9.png" 
+                src={`${import.meta.env.BASE_URL}assets/logo-vehicle.png`}
                 alt="Schöche Logo" 
                 className="w-16 h-16 mx-auto mb-3 opacity-50"
               />
@@ -226,8 +226,8 @@ export function AIChatWidget() {
             >
               {msg.role === "assistant" && (
                 <img 
-                  src="/lovable-uploads/cec23f73-6e4c-43a8-9cbf-dd39b6c5f0e9.png" 
-                  alt="Schöche" 
+                  src={`${import.meta.env.BASE_URL}assets/logo-vehicle.png`}
+                  alt="Schöche"
                   className="w-7 h-7 rounded-full flex-shrink-0 object-contain bg-primary/10 p-0.5"
                 />
               )}

@@ -206,8 +206,8 @@ export default function Leistungen() {
             {/* Bild */}
             <div className="rounded-3xl overflow-hidden shadow-large">
               <img 
-                src="/images/bildschirmfotohaus.jpg" 
-                alt="Sicherheitsberatung für Ihr Zuhause - Schöche Alarm- und Sicherheitstechnik" 
+                src={`${import.meta.env.BASE_URL}images/bildschirmfotohaus.jpg`}
+                alt="Sicherheitsberatung für Ihr Zuhause - Schöche Alarm- und Sicherheitstechnik"
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -292,8 +292,8 @@ export default function Leistungen() {
                 {/* Bild */}
                 <div className="rounded-3xl overflow-hidden shadow-large mb-6">
                   <img 
-                    src={index === 0 ? "/images/bildschirmfotohaus.jpg" : "/images/bildschirmfotoauto.jpg"} 
-                    alt={`${service.title} - Schöche Alarm- und Sicherheitstechnik`} 
+                    src={`${import.meta.env.BASE_URL}images/${index === 0 ? "bildschirmfotohaus.jpg" : "bildschirmfotoauto.jpg"}`}
+                    alt={`${service.title} - Schöche Alarm- und Sicherheitstechnik`}
                     className="w-full h-auto object-cover"
                   />
                 </div>
