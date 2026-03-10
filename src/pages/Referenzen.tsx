@@ -2,6 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Star, Quote, ArrowRight, Building2, Home, ExternalLink, Camera } from "lucide-react";
+import ShimmerText from "@/components/ui/shimmer-text";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 // Echte Google-Bewertung
 const googleReviews = [{
@@ -39,19 +41,31 @@ const additionalTestimonials = [{
 const badges = ["VdS-zertifiziert", "Meisterbetrieb", "Regionaler Partner", "24h Service", "Über 30 Jahre Erfahrung"];
 export default function Referenzen() {
   return <Layout>
-      {/* Hero */}
-      <section className="pt-32 pb-16 bg-secondary">
-        <div className="container-tight">
+      {/* Hero mit Sparkles/Shimmer */}
+      <section className="pt-32 pb-20 bg-slate-950 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <SparklesCore
+            background="transparent"
+            minSize={0.6}
+            maxSize={1.2}
+            particleDensity={120}
+            className="w-full h-full"
+            particleColor="#38bdf8"
+            speed={0.6}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/80 to-slate-950" />
+        </div>
+        <div className="container-tight relative">
           <div className="text-center max-w-3xl mx-auto">
             <span className="text-accent font-semibold text-sm uppercase tracking-wider mb-4 block">
               Referenzen & Bewertungen
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <ShimmerText className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-50 mb-4">
               Zufriedene Kunden sprechen für uns
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground">
-              Erfahren Sie, was unsere Kunden über die Zusammenarbeit mit uns berichten – 
-              echte Bewertungen von echten Kunden.
+            </ShimmerText>
+            <p className="text-lg md:text-xl text-slate-300">
+              Erfahren Sie, was unsere Kunden über die Zusammenarbeit mit uns berichten – echte
+              Bewertungen von echten Kunden.
             </p>
           </div>
         </div>

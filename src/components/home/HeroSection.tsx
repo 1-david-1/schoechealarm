@@ -2,56 +2,67 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Shield, CheckCircle2, ArrowRight } from "lucide-react";
 import sicherheitGefuehlImage from "@/assets/sicherheit-gefuehl.png";
+import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center gradient-hero overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
+    <section className="relative gradient-hero overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent/5 via-transparent to-transparent" />
       </div>
 
-      <div className="container-tight relative z-10 pt-24 pb-16">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Content */}
-          <div className="text-center lg:text-left">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 mb-8 animate-fade-up">
+      <ContainerScroll
+        titleComponent={
+          <>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 mb-6 md:mb-8">
               <Shield className="w-4 h-4 text-accent" />
               <span className="text-sm font-medium text-primary-foreground/90">
-                Über 30 Jahre Erfahrung
+                Über 30 Jahre Erfahrung in Sicherheitstechnik
               </span>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up animation-delay-100">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4">
               Mit Sicherheit{" "}
               <span className="text-accent">ein gutes Gefühl!</span>
             </h1>
-
-            {/* Subheadline */}
-            <p className="text-lg md:text-xl text-primary-foreground/80 mb-4 max-w-xl mx-auto lg:mx-0 animate-fade-up animation-delay-200">
-              <strong>Ihre Sicherheit steht bei uns im Fokus!</strong>
+            <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto">
+              Individuelle Alarm- und Sicherheitstechnik für Ihr Zuhause und Ihr Unternehmen –
+              geplant, installiert und betreut aus einer Hand.
             </p>
-            <p className="text-base md:text-lg text-primary-foreground/70 mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-up animation-delay-200">
-              Wir entwickeln ein individuelles Konzept für einzigartige Kunden. 
-              Sie zahlen nur das, was Sie wirklich benötigen – mit über 30 Jahren Markterfahrung.
+          </>
+        }
+      >
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 h-full items-stretch">
+          <div className="flex flex-col justify-center space-y-5 md:space-y-6">
+            <p className="text-base md:text-lg text-primary-foreground/80">
+              <strong>Ihre Sicherheit steht bei uns im Fokus.</strong> Seit über drei Jahrzehnten
+              entwickeln wir maßgeschneiderte Lösungen für Einfamilienhäuser, Betriebe und
+              öffentliche Einrichtungen im Vogtland und darüber hinaus.
+            </p>
+            <p className="text-base md:text-lg text-primary-foreground/70">
+              Sie zahlen nur das, was Sie wirklich benötigen – transparent, normgerecht und
+              mit einem festen Ansprechpartner vom ersten Gespräch bis zur Wartung.
             </p>
 
-            {/* Benefits */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-10 animate-fade-up animation-delay-300">
-              {["Kostenlose Beratung", "Maßgeschneiderte Lösungen", "Regionale Nähe"].map((benefit) => (
-                <div key={benefit} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-accent" />
-                  <span className="text-sm text-primary-foreground/80">{benefit}</span>
-                </div>
-              ))}
+            <div className="flex flex-wrap gap-3">
+              {["Kostenlose Vor-Ort-Analyse", "VdS-konforme Systeme", "24/7-Service nach Bedarf"].map(
+                (benefit) => (
+                  <div
+                    key={benefit}
+                    className="flex items-center gap-2 rounded-full bg-background/60 border border-border/70 px-3 py-1.5"
+                  >
+                    <CheckCircle2 className="w-4 h-4 text-accent" />
+                    <span className="text-xs md:text-sm text-primary-foreground/80">
+                      {benefit}
+                    </span>
+                  </div>
+                ),
+              )}
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up animation-delay-400">
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Button variant="hero" size="xl" asChild>
                 <Link to="/kontakt">
                   Kostenlose Beratung anfragen
@@ -59,36 +70,36 @@ export function HeroSection() {
                 </Link>
               </Button>
               <Button variant="hero-outline" size="xl" asChild>
-                <Link to="/leistungen">Unsere Leistungen</Link>
+                <Link to="/leistungen">Unsere Leistungen entdecken</Link>
               </Button>
             </div>
           </div>
 
-          {/* Visual */}
-          <div className="relative hidden lg:block animate-fade-up animation-delay-300">
-            <div className="relative">
-              {/* Hero Image */}
-              <div className="rounded-3xl overflow-hidden shadow-glow">
-                <img 
+          <div className="relative hidden md:block">
+            <div className="relative h-full flex items-center">
+              <div className="rounded-3xl overflow-hidden shadow-glow ring-1 ring-white/10 w-full">
+                <img
                   src={sicherheitGefuehlImage}
-                  alt="Mit Sicherheit ein gutes Gefühl - Schöche Alarm und Sicherheitstechnik"
-                  className="w-full h-auto object-cover"
+                  alt="Mit Sicherheit ein gutes Gefühl - Schöche Alarm- und Sicherheitstechnik"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
-              {/* Floating Badge */}
-              <div className="absolute -top-4 -right-4 bg-accent text-accent-foreground px-5 py-3 rounded-2xl shadow-glow animate-float">
-                <span className="font-bold text-lg">30+</span>
-                <span className="block text-xs">Jahre Erfahrung</span>
+              <div className="absolute -top-4 -right-4 bg-accent text-accent-foreground px-5 py-3 rounded-2xl shadow-glow">
+                <span className="font-bold text-lg leading-none">30+</span>
+                <span className="block text-xs leading-tight">
+                  Jahre
+                  <br />
+                  Erfahrung
+                </span>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </ContainerScroll>
 
-      {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-2">
+        <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-2 bg-background/60 backdrop-blur">
           <div className="w-1.5 h-3 rounded-full bg-primary-foreground/50" />
         </div>
       </div>

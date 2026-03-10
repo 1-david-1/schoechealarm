@@ -1,9 +1,9 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { 
-  Briefcase, 
-  MapPin, 
-  Clock, 
+import {
+  Briefcase,
+  MapPin,
+  Clock,
   Euro,
   CheckCircle2,
   Users,
@@ -11,8 +11,10 @@ import {
   Wrench,
   GraduationCap,
   Car,
-  Send
+  Send,
 } from "lucide-react";
+import { LampContainer } from "@/components/ui/lamp";
+import { Spotlight } from "@/components/ui/spotlight";
 
 const benefits = [
   { icon: Euro, text: "Faire Vergütung" },
@@ -45,19 +47,25 @@ export default function Karriere() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-slate-50">
+      <section className="pt-32 pb-20 bg-slate-950">
         <div className="container-tight">
-          <div className="text-center max-w-3xl mx-auto">
-            <span className="text-accent font-semibold text-sm uppercase tracking-wider mb-4 block">
-              Karriere
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Werden Sie Teil unseres Teams
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground">
-              Wir suchen engagierte Mitarbeiter, die mit uns gemeinsam für mehr 
-              Sicherheit in der Region sorgen möchten.
-            </p>
+          <div className="relative">
+            <div className="absolute inset-0">
+              <Spotlight className="-top-24 left-10 hidden md:block" />
+              <Spotlight className="-bottom-24 right-10 hidden md:block" />
+            </div>
+            <LampContainer>
+              <span className="text-accent font-semibold text-xs md:text-sm uppercase tracking-wider mb-3 md:mb-4 block">
+                Karriere
+              </span>
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-slate-50 mb-4">
+                Werden Sie Teil unseres Teams
+              </h1>
+              <p className="text-sm md:text-lg text-slate-300 max-w-2xl mx-auto">
+                Arbeiten mit Zukunft: moderne Sicherheitstechnik, spannende Projekte und ein
+                familiäres Umfeld – direkt im Vogtland.
+              </p>
+            </LampContainer>
           </div>
         </div>
       </section>
