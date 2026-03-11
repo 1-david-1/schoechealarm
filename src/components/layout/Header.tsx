@@ -42,7 +42,7 @@ export function Header() {
   }, [location]);
   return <header className={cn(
       "sticky top-0 z-50 py-4 transition-all duration-300",
-      isScrolled 
+      isScrolled || isMobileMenuOpen
         ? "bg-background/95 backdrop-blur-md shadow-sm" 
         : "bg-primary"
     )}>
@@ -52,10 +52,10 @@ export function Header() {
           <Link to="/" className="flex items-center gap-3 group shrink-0">
             <img src={logoVehicle} alt="Schöche Alarm- und Sicherheitstechnik Logo" className="h-10 w-auto" />
             <div className="flex flex-col justify-center">
-              <span className={cn("font-bold text-base md:text-lg leading-none transition-colors whitespace-nowrap", isScrolled ? "text-foreground group-hover:text-accent" : "text-primary-foreground group-hover:text-accent")}>
+              <span className={cn("font-bold text-base md:text-lg leading-none transition-colors whitespace-nowrap", isScrolled || isMobileMenuOpen ? "text-foreground group-hover:text-accent" : "text-primary-foreground group-hover:text-accent")}>
                 Schöche Alarm
               </span>
-              <span className={cn("text-[10px] md:text-xs leading-none mt-0.5 whitespace-nowrap", isScrolled ? "text-muted-foreground" : "text-primary-foreground/70")}>
+              <span className={cn("text-[10px] md:text-xs leading-none mt-0.5 whitespace-nowrap", isScrolled || isMobileMenuOpen ? "text-muted-foreground" : "text-primary-foreground/70")}>
                 Sicherheitstechnik
               </span>
             </div>
@@ -80,8 +80,8 @@ export function Header() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className={cn("lg:hidden p-2 rounded-xl transition-colors", isScrolled ? "hover:bg-secondary" : "hover:bg-primary-foreground/10")} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Menü öffnen">
-            {isMobileMenuOpen ? <X className="" /> : <Menu className={cn("w-6 h-6", isScrolled ? "text-foreground" : "text-primary-foreground")} />}
+          <button className={cn("lg:hidden p-2 rounded-xl transition-colors", isScrolled || isMobileMenuOpen ? "hover:bg-secondary" : "hover:bg-primary-foreground/10")} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Menü öffnen">
+            {isMobileMenuOpen ? <X className="text-foreground w-6 h-6" /> : <Menu className={cn("w-6 h-6", isScrolled ? "text-foreground" : "text-primary-foreground")} />}
           </button>
         </nav>
 

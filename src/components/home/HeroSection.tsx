@@ -6,42 +6,41 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 export function HeroSection() {
   return (
-    <section className="relative gradient-hero overflow-hidden">
+    <section className="relative bg-black overflow-hidden pt-8">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent/5 via-transparent to-transparent" />
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl opacity-20" />
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl opacity-20" />
       </div>
 
       <ContainerScroll
         titleComponent={
           <>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 mb-6 md:mb-8">
-              <Shield className="w-4 h-4 text-accent" />
-              <span className="text-sm font-medium text-primary-foreground/90">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-900 mb-6 md:mb-8 bg-black/50">
+              <Shield className="w-4 h-4 text-white" />
+              <span className="text-sm font-medium text-white">
                 Über 30 Jahre Erfahrung in Sicherheitstechnik
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight mb-4">
               Mit Sicherheit{" "}
               <span className="text-accent">ein gutes Gefühl!</span>
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
               Individuelle Alarm- und Sicherheitstechnik für Ihr Zuhause und Ihr Unternehmen –
               geplant, installiert und betreut aus einer Hand.
             </p>
           </>
         }
       >
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 h-full items-stretch">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 h-full items-stretch w-full px-4">
           <div className="flex flex-col justify-center space-y-5 md:space-y-6">
-            <p className="text-base md:text-lg text-primary-foreground/80">
+            <p className="text-base md:text-lg text-white">
               <strong>Ihre Sicherheit steht bei uns im Fokus.</strong> Seit über drei Jahrzehnten
               entwickeln wir maßgeschneiderte Lösungen für Einfamilienhäuser, Betriebe und
               öffentliche Einrichtungen im Vogtland und darüber hinaus.
             </p>
-            <p className="text-base md:text-lg text-primary-foreground/70">
+            <p className="text-base md:text-lg text-white/90">
               Sie zahlen nur das, was Sie wirklich benötigen – transparent, normgerecht und
               mit einem festen Ansprechpartner vom ersten Gespräch bis zur Wartung.
             </p>
@@ -51,10 +50,10 @@ export function HeroSection() {
                 (benefit) => (
                   <div
                     key={benefit}
-                    className="flex items-center gap-2 rounded-full bg-background/60 border border-border/70 px-3 py-1.5"
+                    className="flex items-center gap-2 rounded-full bg-black/40 border border-blue-900 px-3 py-1.5"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-accent" />
-                    <span className="text-xs md:text-sm text-primary-foreground/80">
+                    <CheckCircle2 className="w-4 h-4 text-white" />
+                    <span className="text-xs md:text-sm text-white font-medium">
                       {benefit}
                     </span>
                   </div>
@@ -75,9 +74,9 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="relative hidden md:block">
-            <div className="relative h-full flex items-center">
-              <div className="rounded-3xl overflow-hidden shadow-glow ring-1 ring-white/10 w-full">
+          <div className="relative hidden md:block w-full">
+            <div className="relative h-full flex items-center min-h-[400px]">
+              <div className="rounded-3xl overflow-hidden shadow-glow ring-1 ring-white/10 w-full h-full scale-110">
                 <img
                   src={sicherheitGefuehlImage}
                   alt="Mit Sicherheit ein gutes Gefühl - Schöche Alarm- und Sicherheitstechnik"
@@ -85,7 +84,7 @@ export function HeroSection() {
                 />
               </div>
 
-              <div className="absolute -top-4 -right-4 bg-accent text-accent-foreground px-5 py-3 rounded-2xl shadow-glow">
+              <div className="absolute -top-4 -right-12 bg-accent text-accent-foreground px-5 py-3 rounded-2xl shadow-glow">
                 <span className="font-bold text-lg leading-none">30+</span>
                 <span className="block text-xs leading-tight">
                   Jahre

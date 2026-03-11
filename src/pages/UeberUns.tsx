@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Timeline } from "@/components/ui/timeline";
 import { 
   CheckCircle2, 
   Users, 
@@ -30,12 +31,75 @@ const values = [
   },
 ];
 
-const timeline = [
-  { year: "1990", event: "Gründung des Unternehmens" },
-  { year: "2000", event: "Erweiterung um Videoüberwachung" },
-  { year: "2010", event: "Einführung von Smart-Home-Lösungen" },
-  { year: "2020", event: "30-jähriges Jubiläum" },
-  { year: "Heute", event: "Über 30 Jahre Erfahrung & moderne Technik" },
+const timelineData = [
+  { 
+    title: "1990", 
+    content: (
+      <div>
+        <p className="text-muted-foreground text-sm font-normal mb-8 leading-relaxed">
+          Gründung des Unternehmens als kleiner Handwerksbetrieb. Mit Leidenschaft für Elektrotechnik und Sicherheit legten wir den Grundstein für Schöche Alarm- und Sicherheitstechnik.
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2670&auto=format&fit=crop" alt="Gründung" className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-md" />
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2670&auto=format&fit=crop" alt="Handwerk" className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-md" />
+        </div>
+      </div>
+    ) 
+  },
+  { 
+    title: "2000", 
+    content: (
+      <div>
+        <p className="text-muted-foreground text-sm font-normal mb-8 leading-relaxed">
+          Erweiterung um Videoüberwachung. Wir integrieren die ersten hochauflösenden Kamerasysteme für Gewerbekunden und erweiteren unser Portfolio maßgeblich.
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=2660&auto=format&fit=crop" alt="Videoüberwachung" className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-md" />
+        </div>
+      </div>
+    ) 
+  },
+  { 
+    title: "2010", 
+    content: (
+      <div>
+        <p className="text-muted-foreground text-sm font-normal mb-8 leading-relaxed">
+          Einführung von Smart-Home-Lösungen. Sicherheitstechnik wird vernetzt. Alarmanlagen lassen sich nun bequem per Smartphone App steuern und überwachen.
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          <img src="https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2670&auto=format&fit=crop" alt="Smart Home" className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-md" />
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2670&auto=format&fit=crop" alt="App Steuerung" className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-md" />
+        </div>
+      </div>
+    ) 
+  },
+  { 
+    title: "2020", 
+    content: (
+      <div>
+        <p className="text-muted-foreground text-sm font-normal mb-8 leading-relaxed">
+          30-jähriges Jubiläum! Ein starker Meilenstein, der unsere Verbundenheit zur Region unterstreicht. Wir danken all unseren Kunden für das große Vertrauen.
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2670&auto=format&fit=crop" alt="Team Jubiläum" className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-md" />
+        </div>
+      </div>
+    ) 
+  },
+  { 
+    title: "Heute", 
+    content: (
+      <div>
+        <p className="text-muted-foreground text-sm font-normal mb-8 leading-relaxed">
+          Über 30 Jahre Erfahrung & modernste Technik. Wir entwickeln zukunftssichere VdS-zertifizierte Konzepte und wachsen kontinuierlich mit den Anforderungen des Marktes mit.
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2669&auto=format&fit=crop" alt="Zukunftsorientiert" className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-md" />
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop" alt="Data" className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-md" />
+        </div>
+      </div>
+    ) 
+  },
 ];
 
 export default function UeberUns() {
@@ -146,34 +210,7 @@ export default function UeberUns() {
       </section>
 
       {/* Timeline */}
-      <section className="section-padding bg-background">
-        <div className="container-tight">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Unsere Geschichte
-            </h2>
-          </div>
-
-          <div className="max-w-2xl mx-auto">
-            {timeline.map((item, index) => (
-              <div key={item.year} className="flex gap-6 pb-8 last:pb-0">
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-accent-foreground font-bold text-sm shrink-0">
-                    {item.year.slice(-2)}
-                  </div>
-                  {index < timeline.length - 1 && (
-                    <div className="w-0.5 h-full bg-accent/20 mt-2" />
-                  )}
-                </div>
-                <div className="pb-8">
-                  <span className="text-accent font-bold">{item.year}</span>
-                  <p className="text-foreground mt-1">{item.event}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Timeline data={timelineData} />
 
       {/* Why Us */}
       <section className="section-padding bg-slate-50">
