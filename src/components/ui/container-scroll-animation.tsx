@@ -90,7 +90,7 @@ export const Card = ({ rotate, scale, translate, children }: CardProps) => {
         boxShadow:
           "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
-      className="max-w-5xl -mt-8 md:-mt-12 mx-auto h-[28rem] md:h-[34rem] w-full border border-white/10 bg-black/80 backdrop-blur-xl p-2 md:p-4 rounded-[32px] shadow-2xl"
+      className="max-w-5xl -mt-8 md:-mt-12 mx-auto h-[34rem] md:h-[45rem] w-full border border-white/10 bg-black/80 backdrop-blur-xl p-2 md:p-4 rounded-[32px] shadow-2xl"
     >
       <div className="h-full w-full overflow-hidden rounded-[20px] bg-neutral-900 md:p-3 relative">
         {children}

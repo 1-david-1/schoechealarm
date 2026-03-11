@@ -7,9 +7,12 @@ import { ArrowRight } from "lucide-react";
 export default function Intro() {
   return (
     <div className="h-screen w-full bg-black flex flex-col items-center justify-center overflow-hidden">
-      <h2 className="text-xl md:text-2xl text-white font-light text-center relative z-20 mb-4 tracking-wide">
+      <h2 className="text-xl md:text-2xl text-white font-light text-center relative z-20 mb-2 tracking-wide">
         Visit your freshly created Website made by
       </h2>
+      <p className="text-sm md:text-base text-white/70 text-center relative z-20 mb-8 tracking-wider uppercase">
+        Gegründet 2024 • Agentur mit Sitz in Deutschland
+      </p>
       <div className="w-full max-w-[40rem] h-40 relative px-4">
         {/* Gradients */}
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-[hsl(var(--amber))] to-transparent h-[2px] w-3/4 blur-sm opacity-60" />
