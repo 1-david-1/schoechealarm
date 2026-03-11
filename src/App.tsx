@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import Intro from "./pages/Intro";
 import Index from "./pages/Index";
 import Leistungen from "./pages/Leistungen";
 import Produkte from "./pages/Produkte";
@@ -36,7 +37,8 @@ const App = () => (
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Intro />} />
+          <Route path="/home" element={<Index />} />
           <Route path="/leistungen" element={<Leistungen />} />
           <Route path="/produkte" element={<Produkte />} />
           <Route path="/ueber-uns" element={<UeberUns />} />

@@ -96,6 +96,7 @@ const services = [
       "Integration mit Smart-Home-Systemen",
     ],
     useCases: ["Einfamilienhäuser", "Wohnungen", "Gewerbeobjekte", "Büros", "Lagerhallen"],
+    imageUrl: "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2670&auto=format&fit=crop",
   },
   {
     id: "video",
@@ -112,6 +113,7 @@ const services = [
       "DSGVO-konforme Lösungen",
     ],
     useCases: ["Außengelände", "Eingangsbereiche", "Parkplätze", "Verkaufsräume", "Produktionshallen"],
+    imageUrl: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=2660&auto=format&fit=crop",
   },
   {
     id: "zutritt",
@@ -128,6 +130,7 @@ const services = [
       "Verwaltung über Software oder App",
     ],
     useCases: ["Praxen", "Kanzleien", "Bürokomplexe", "Produktionsbereiche", "Serverräume"],
+    imageUrl: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=2669&auto=format&fit=crop",
   },
   {
     id: "brand",
@@ -144,6 +147,7 @@ const services = [
       "Erfüllung gesetzlicher Anforderungen",
     ],
     useCases: ["Wohngebäude", "Gewerbebetriebe", "Produktionsstätten", "Hotels", "Pflegeeinrichtungen"],
+    imageUrl: "https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=2670&auto=format&fit=crop",
   },
   {
     id: "service",
@@ -160,6 +164,7 @@ const services = [
       "Ersatzteilversorgung und Updates",
     ],
     useCases: ["Neuinstallationen", "Bestandsanlagen", "Wartungsverträge", "Reparaturen", "Modernisierungen"],
+    imageUrl: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2670&auto=format&fit=crop",
   },
 ];
 
@@ -295,9 +300,9 @@ export default function Leistungen() {
                 {/* Bild */}
                 <div className="rounded-3xl overflow-hidden shadow-large mb-6">
                   <img 
-                    src={service.id === "einbruch" ? systemAss400Image : (index === 0 ? bildschirmfotohausImage : bildschirmfotoautoImage)}
+                    src={service.imageUrl}
                     alt={`${service.title} - Schöche Alarm- und Sicherheitstechnik`}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-[300px] md:h-[400px] object-cover"
                   />
                 </div>
 

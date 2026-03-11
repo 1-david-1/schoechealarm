@@ -1,13 +1,16 @@
 import React from "react";
 import { SparklesCore } from "@/components/ui/sparkles";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
-export function PreInterface() {
+export default function Intro() {
   return (
-    <div className="h-[25rem] md:h-[30rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md pt-20">
+    <div className="h-screen w-full bg-black flex flex-col items-center justify-center overflow-hidden">
       <h2 className="text-xl md:text-2xl text-white font-light text-center relative z-20 mb-4 tracking-wide">
         Visit your freshly created Website made by
       </h2>
-      <div className="w-[40rem] h-40 relative">
+      <div className="w-full max-w-[40rem] h-40 relative px-4">
         {/* Gradients */}
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-[hsl(var(--amber))] to-transparent h-[2px] w-3/4 blur-sm opacity-60" />
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-[hsl(var(--amber))] to-transparent h-px w-3/4 opacity-80" />
@@ -31,6 +34,15 @@ export function PreInterface() {
 
         {/* Radial Gradient to prevent sharp edges */}
         <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)] pointer-events-none"></div>
+      </div>
+
+      <div className="relative z-30 mt-16 md:mt-24 animate-fade-up" style={{ animationDelay: "1s" }}>
+        <Button variant="default" size="lg" className="bg-[hsl(var(--amber))] text-white hover:bg-[hsl(var(--amber-dark))] transition-colors px-8 py-6 rounded-full text-lg shadow-glow" asChild>
+          <Link to="/home">
+            Hier geht's zur Webseite
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Link>
+        </Button>
       </div>
     </div>
   );

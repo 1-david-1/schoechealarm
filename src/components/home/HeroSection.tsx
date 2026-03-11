@@ -33,7 +33,7 @@ export function HeroSection() {
           </>
         }
       >
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 h-full items-stretch w-full px-4">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 h-full items-stretch w-full px-4 rounded-[20px] bg-black">
           <div className="flex flex-col justify-center space-y-5 md:space-y-6">
             <p className="text-base md:text-lg text-white">
               <strong>Ihre Sicherheit steht bei uns im Fokus.</strong> Seit über drei Jahrzehnten
