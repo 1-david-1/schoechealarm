@@ -10,7 +10,9 @@ import {
   Heart,
   Target,
   Handshake,
-  ArrowRight
+  ArrowRight,
+  Phone,
+  Mail
 } from "lucide-react";
 
 const values = [
@@ -211,6 +213,82 @@ export default function UeberUns() {
 
       {/* Timeline */}
       <Timeline data={timelineData} />
+
+      {/* Team Section */}
+      <section className="section-padding bg-background">
+        <div className="container-tight">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Unser Team
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Lernen Sie die Menschen hinter Schöche Alarm- und Sicherheitstechnik kennen.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                name: "Andreas Schöche",
+                role: "Inhaber & Geschäftsführer",
+                phone: "0172 / 82 04 945",
+                email: "",
+                description: "Ansprechpartner für die gesamte Absicherung Ihres Objektes, Neuinstallationen bis hin Erweiterungen. Brandschutzberatung DIN 14675, DIN VE 0826-2 sowie private Brandschutzanliegen.",
+              },
+              {
+                name: "Stephanie Schöche",
+                role: "Operatives Management",
+                phone: "0151 / 70 10 89 92",
+                email: "stephanie.schoeche@schoeche-alarm.de",
+                description: "Ansprechpartnerin für Termin-, Baustellen- und Ablaufplanung. Koordination der Wartungstermine und Problem-Behebungen. Betreuung unserer Mitarbeiter und Handelsvertreter.",
+              },
+              {
+                name: "Mariella Schöche",
+                role: "Vertragsmanagement",
+                phone: "037434 - 80628",
+                email: "info@schoeche-alarm.de",
+                description: "Ansprechpartnerin für Rechnungs-, Kontenklärung und Zahlungsbedingungen, sowie Vertragsmanagement.",
+              },
+              {
+                name: "Mirko Schöche",
+                role: "Technischer Support",
+                phone: "",
+                email: "",
+                description: "Ansprechpartner für Anlagenprobleme, Programmierungswünsche und Fernwartung.",
+              },
+            ].map((member) => (
+              <div key={member.name} className="bg-card rounded-2xl p-6 border border-border shadow-soft flex flex-col h-full">
+                <div className="w-16 h-16 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-2xl font-bold mb-4 mx-auto">
+                  {member.name.charAt(0)}{member.name.split(" ")[1].charAt(0)}
+                </div>
+                <h3 className="text-xl font-bold text-foreground text-center mb-1">{member.name}</h3>
+                <p className="text-accent text-sm font-medium text-center mb-4">{member.role}</p>
+                <div className="text-sm text-muted-foreground mb-6 flex-grow text-center">
+                  {member.description}
+                </div>
+                <div className="space-y-2 mt-auto text-sm">
+                  {member.phone && (
+                    <div className="flex items-center gap-2 justify-center">
+                      <Phone className="w-4 h-4 text-muted-foreground" />
+                      <a href={`tel:${member.phone.replace(/[^0-9+]/g, '')}`} className="hover:text-accent transition-colors">
+                        {member.phone}
+                      </a>
+                    </div>
+                  )}
+                  {member.email && (
+                    <div className="flex items-center gap-2 justify-center pt-1">
+                      <Mail className="w-4 h-4 text-muted-foreground" />
+                      <a href={`mailto:${member.email}`} className="hover:text-accent transition-colors truncate">
+                        {member.email}
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Why Us */}
       <section className="section-padding bg-slate-50">
