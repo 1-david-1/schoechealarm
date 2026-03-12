@@ -33,8 +33,8 @@ export function HeroSection() {
           </>
         }
       >
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 h-full items-stretch w-full px-4 rounded-[20px] bg-black">
-          <div className="flex flex-col justify-center space-y-5 md:space-y-6">
+        <div className="flex flex-col gap-6 lg:gap-8 h-full w-full px-4 rounded-[20px] bg-black">
+          <div className="flex flex-col justify-center items-center text-center space-y-5 md:space-y-6 max-w-4xl mx-auto pt-4 md:pt-8 w-full">
             <p className="text-base md:text-lg text-white">
               <strong>Ihre Sicherheit steht bei uns im Fokus.</strong> Seit über drei Jahrzehnten
               entwickeln wir maßgeschneiderte Lösungen für Einfamilienhäuser, Betriebe und
@@ -45,7 +45,7 @@ export function HeroSection() {
               mit einem festen Ansprechpartner vom ersten Gespräch bis zur Wartung.
             </p>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap justify-center gap-3">
               {["Kostenlose Vor-Ort-Analyse", "VdS-konforme Systeme", "24/7-Service nach Bedarf"].map(
                 (benefit) => (
                   <div
@@ -61,7 +61,7 @@ export function HeroSection() {
               )}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2 w-full sm:w-auto">
               <Button variant="hero" size="xl" asChild>
                 <Link to="/kontakt">
                   Kostenlose Beratung anfragen
@@ -74,25 +74,23 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="relative hidden md:block w-full">
-            <div className="relative h-full flex items-center min-h-[400px]">
-              <div className="rounded-3xl overflow-hidden shadow-glow ring-1 ring-white/10 w-full h-full scale-110">
-                <img
-                  src={sicherheitGefuehlImage}
-                  alt="Mit Sicherheit ein gutes Gefühl - Schöche Alarm- und Sicherheitstechnik"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+          <div className="relative flex-1 w-full min-h-0 pb-4 md:pb-8 mt-2 md:mt-0">
+            <div className="relative w-full h-full rounded-2xl md:rounded-3xl overflow-hidden shadow-glow ring-1 ring-white/10">
+              <img
+                src={sicherheitGefuehlImage}
+                alt="Mit Sicherheit ein gutes Gefühl - Schöche Alarm- und Sicherheitstechnik"
+                className="w-full h-full object-cover object-center"
+              />
 
-              <div className="absolute -top-4 -right-12 bg-accent text-accent-foreground px-5 py-3 rounded-2xl shadow-glow">
-            <span className="font-bold text-lg leading-none">30+</span>
-            <span className="block text-xs leading-tight">
-              Jahre
-              <br />
-              Erfahrung
-            </span>
-          </div>
-        </div>
+              <div className="absolute top-4 right-4 md:top-8 md:right-8 bg-accent text-accent-foreground px-4 py-2 md:px-5 md:py-3 rounded-xl md:rounded-2xl shadow-glow">
+                <span className="font-bold text-base md:text-lg leading-none">30+</span>
+                <span className="block text-[10px] md:text-xs leading-tight">
+                  Jahre
+                  <br />
+                  Erfahrung
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </ContainerScroll>
